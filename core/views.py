@@ -12,18 +12,18 @@ def home(request):
 
 class EmailList(APIView):  # using DRF is a requirement
 
-    def get(self):
-        emails_list = self.batch_retrieve_emails(100)
+    def get(self, request):
+        emails_list = self.batch_retrieve_emails(request.user, 100)
         return Response({'messages': emails_list})
 
-    def batch_retrieve_emails(self, emails_to_retrieve):
+    def batch_retrieve_emails(self, user, emails_to_retrieve):
         emails = {}
         ordered_message_ids = []
 
         def email_fetched(request_id, response, exception):
             emails[response['id']] = parse_email(response)
 
-        api_client = APIClient(self.request.user)
+        api_client = APIClient(user)
         service = discovery.build('gmail', 'v1')
         res = api_client.execute(
             service.users().messages().list(userId='me', maxResults=emails_to_retrieve))

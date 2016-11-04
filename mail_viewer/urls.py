@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('django.contrib.auth.urls', namespace='auth')),
     url(r'^$', core_views.home, name='home'),
-    url(r'^email/$', core_views.email, name='email'),
+    url(r'^email/$', core_views.EmailList.as_view(), name='email_list'),
     url('', include('social.apps.django_app.urls', namespace='social')),
 ]
