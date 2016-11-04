@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr ng-repeat="msg in messages">
+     <td>{{ msg.date }}</td>
+     <td>{{ msg.from }}</td>
+     <td>{{ msg.subject }}</td>
+     <td>{{ msg.snippet }}</td>
+   </tr>
+  </tbody>
+</table>

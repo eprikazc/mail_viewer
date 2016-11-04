@@ -2,7 +2,8 @@
 {% load staticfiles %}
 
 {% block extra_head %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
 <script src="{% static "core/js/app.js" %}"></script>
 {% endblock %}
 
@@ -27,24 +28,9 @@
 {% if user.is_authenticated %}
   {% verbatim %}
   <div ng-app="GmailViewer">
-    <table ng-controller="MainController">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>From</th>
-          <th>Subject</th>
-          <th>Snippet</th>
-        </tr>
-      </thead>
-      <tbody>
-       <tr ng-repeat="msg in messages">
-         <td>{{ msg.date }}</td>
-         <td>{{ msg.from }}</td>
-         <td>{{ msg.subject }}</td>
-         <td>{{ msg.snippet }}</td>
-       </tr>
-      </tbody>
-    </table>
+    <div ng-controller="MainController">
+      <div ng-view></div>
+    </div>
   </div>
   {% endverbatim %}
 {% endif %}
