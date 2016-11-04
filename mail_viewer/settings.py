@@ -99,8 +99,12 @@ AUTHENTICATION_BACKENDS = (
    'django.contrib.auth.backends.ModelBackend',
 )
 LOGIN_REDIRECT_URL = '/'
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '79977355845-evljs7oppobiv53s24ugc2il8jlli4ee.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'w8wVnpKeoENsSJa7STLfM5o4'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get(
+    'KEY',
+    '79977355845-evljs7oppobiv53s24ugc2il8jlli4ee.apps.googleusercontent.com')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get(
+    'SECRET',
+    'w9wVnpKeoENsSJa7STLfM5o4')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
     'https://www.googleapis.com/auth/plus.login',
     'https://www.googleapis.com/auth/plus.me',
