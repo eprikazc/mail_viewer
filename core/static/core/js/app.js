@@ -13,7 +13,7 @@
   gmailViewerModule.config(function($routeProvider) {
     $routeProvider
      .when('/', {
-      templateUrl: '/static/core/templates/messages.html',
+      templateUrl: '/static/core/partials/messages.html',
       controller: 'MainController',
     });
   });
