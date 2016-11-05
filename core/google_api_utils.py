@@ -23,6 +23,8 @@ class APIClient(object):
         credentials = AccessTokenCredentials(
             access_token,
             'my-user-agent/1.0')
+        # we use caching, as suggested in
+        # https://developers.google.com/api-client-library/python/guide/performance
         return credentials.authorize(httplib2.Http(cache=".cache"))
 
 
