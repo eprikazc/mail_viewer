@@ -5,10 +5,10 @@ Developed with Ubuntu 16.04, Docker 1.12.3, Docker-Compose 1.9.0-rc1
 
 ## Installation
 1. Install [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/):
-2. ```
-   docker-compose build
-   docker-compose up
-   ```
+2. Build and run
+
+        docker-compose build
+        docker-compose up
 3. Edit /etc/hosts to resolve test1.com to localhost
 4. Go to http://test1.com:8000/ in browser
 
