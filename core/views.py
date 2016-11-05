@@ -7,7 +7,7 @@ from core.google_api_utils import APIClient, parse_email
 
 
 def home(request):
-    return render(request, 'core/home.html')
+    return render(request, 'home.html')
 
 
 class EmailList(APIView):  # using DRF is a requirement
