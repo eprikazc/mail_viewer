@@ -38,8 +38,8 @@ def parse_email(msg_data):
 
 def parse_header(msg_data, header_name):
     headers = [
-        h for h in msg_data['payload']['headers']
-        if h['name'] == header_name
+        header for header in msg_data['payload']['headers']
+        if header['name'] == header_name
     ]
     if headers:
         return headers[0]['value']
