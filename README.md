@@ -24,8 +24,5 @@ The app is preconfigured with Google API app. If you wish, you may configure you
 
 Configure app to use your Google APIs App:
 ```
-sudo su  # if you run docker as root user
-export KEY="your google APIs app client ID"
-export SECRET="your google APIs app client secret"
-docker-compose up
+sudo KEY="your google APIs app client ID" SECRET="your google APIs app client secret" docker-compose up
 ```
